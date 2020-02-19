@@ -13,12 +13,12 @@ boundary="periodic", sm="none", smlevels=c(1), spar=NULL, alpha=NULL,
 check=FALSE, max.imf=10, plot.imf=FALSE, interm=NULL, weight=NULL)
 
 # Calculates the Hilbert-Huang transform of the signal, resulting in a decomposition of the signal 
-# into 10 different "IMF" components (10 characteristic oscillatiory components present in the signal) and a residue, 
+# into 10 different "IMF" components (characteristic oscillatiory components present in the signal) and a residue, 
 # which can be summed up to reconstruct the signal completely, as described in [reference]. By decomposing the signal 
 # in this way the predictive analysis is more robust to noise and non-stationary characteristics of the signal.
 
 j=960 
-# length of forecast, look-ahead timewindow is 960 hours/pricepoints.
+# length of forecast, look-ahead timewindow is j hours/pricepoints.
 
 l=24 
 # length of look-back timewindow, for computing the k nearest neighboors of consecutive length-j segments.
