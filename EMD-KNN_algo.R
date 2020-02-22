@@ -8,6 +8,8 @@ library(doParallel)
 
 registerDoParallel(4)
 
+# For parallelizing computations using the %dopar% operator bellow.
+
 data <- read.dta("/Users/nilskakoseosnystrom/Downloads/spotmarket.dta")
 
 sig <- data[,28]
