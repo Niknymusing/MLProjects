@@ -74,7 +74,7 @@ q <- 1/(dist(rbind(Training_data[indices_of_k_nearest_neighboors[i],], t(query_t
 f <- f + q*sigimf[(indices_of_k_nearest_neighboors[i] + l):(indices_of_k_nearest_neighboors[i] + l + j - 1)]
 
 }
-# Computes the weights for each of the k nearest neigboors and adds them together to form the forecast.
+# Computes the distance-weights for each of the k nearest neigboors and sums the weighted k nearest neigbhoors.
  
 c = 0
 
@@ -83,7 +83,7 @@ for(i in 1:k) {
 c <-  c + 1/(dist(rbind(Training_data[indices_of_k_nearest_neighboors[i]], t(query_timewindow))) + 0.01) 
 
 }
-# Computes normalisation constant for the convex combination of weighted k-nearest neighboors.
+# Computes normalisation constant to form a convex combination of weighted k-nearest neighboors.
 
 
 forecast <- forecast + (1/c)*f
