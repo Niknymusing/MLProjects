@@ -2,6 +2,12 @@ library(foreign)
 
 library(EMD)
 
+library(foreach)
+
+library(doParallel)
+
+registerDoParallel(4)
+
 data <- read.dta("/Users/nilskakoseosnystrom/Downloads/spotmarket.dta")
 
 sig <- data[,28]
@@ -28,7 +34,7 @@ k=1060
 
 forecast <- vector(mode = "numeric", length=j)
 
-for(i in 1:10) {
+foreach(i in 1:10) %dopar% {
 
 sigimf <- sigemd$imf[,i]
 query_timewindow <- sigimf[(length(sigimf) - j - l):(length(sigimf) - j - 1)] 
