@@ -20,11 +20,12 @@ boundary="periodic", sm="none", smlevels=c(1), spar=NULL, alpha=NULL,
 
 check=FALSE, max.imf=10, plot.imf=FALSE, interm=NULL, weight=NULL)
 
-# Calculates the Hilbert-Huang transform of the signal, resulting in a decomposition of the signal 
-# into 10 different "IMF" components (characteristic oscillatiory components present in the signal) and a residue, 
-# which can be summed up to reconstruct the signal completely, as described in [N.Huang 2003, "Applications of 
-# Hilbert–Huang transform to non‐stationary financial time series analysis"]. By decomposing the signal 
-# in this way the predictive analysis is more robust to noise, non-linear and non-stationary characteristics of the signal.
+# Calculates the Hilbert-Huang transform of the signal, which gives a decomposition of the signal 
+# into a number of (10 in this case) different "IMF" components, which are characteristic oscillatiory components present 
+# in the signal) and a residue, as described in [N.Huang 2003, "Applications of Hilbert–Huang transform to non‐stationary 
+# financial time series analysis"]. Summing the IMFs and the residue reconstruct the signal completely. 
+# By decomposing the signal in this way the predictive analysis is more robust to noise, non-linear and non-stationary 
+# characteristics of the signal.
 
 j=960 
 # length of forecast, look-ahead timewindow is j hours/pricepoints.
